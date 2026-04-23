@@ -59,5 +59,32 @@ namespace negocio
             }
 
         }
+public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                // eliminar imágenes primero
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @id");
+                datos.limpiarParametros();
+                datos.setearParametros("@id", id);
+                datos.ejecutarAccion();
+
+                // eliminar artículo
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @id");
+                datos.limpiarParametros();
+                datos.setearParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
-}
+}}

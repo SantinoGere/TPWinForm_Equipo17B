@@ -87,6 +87,11 @@ namespace negocio
             comando.Parameters.AddWithValue(nombre, valor);
         }
 
+        public void limpiarParametros()
+        {
+            comando.Parameters.Clear();
+        }
+
         public void cerrarConexion()
         {
             if (lector != null)
