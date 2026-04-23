@@ -59,6 +59,36 @@ namespace negocio
             }
 
         }
+
+        public int agregarDevolverId(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int id = 0;
+
+            try
+            {
+                datos.setearConsulta("Insert into ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio) Output INSERTED.Id values(@codigo,@nombre,@descripcion,@idMarca,@idCategoria,@precio)");
+                datos.setearParametros("@codigo", articulo.Codigo);
+                datos.setearParametros("@nombre",articulo.Nombre);
+                datos.setearParametros("@descripcion",articulo.Descripcion);
+                datos.setearParametros("@idMarca",articulo.Marca.Id);
+                datos.setearParametros("@idCategoria",articulo.Categoria.Id);
+                datos.setearParametros("@precio",articulo.Precio);
+                id = datos.ejecutarDevolverId();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return id;
+
+        }
         public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();

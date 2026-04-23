@@ -97,7 +97,24 @@ namespace winforms_app
             articulo.Descripcion = rtxtDescripcion.Text;
             articulo.Precio = nPrecio.Value;
 
-            negocio.agregar(articulo);
+            if(lwUrlImagen.Text != null)
+            {
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                int idArticulo = negocio.agregarDevolverId(articulo);
+
+                for(int i =0;i<lwUrlImagen.Items.Count;i++)
+                {
+                    string url = lwUrlImagen.Items[i].Text;
+                    imagenNegocio.agregar(idArticulo, url);
+                }
+
+            }
+            else
+            {
+                negocio.agregar(articulo);
+
+            }
+
 
             Close();
         }
