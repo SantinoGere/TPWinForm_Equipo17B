@@ -16,7 +16,7 @@ namespace negocio
 
             datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id");
 
-            datos.ejecutarLectura();
+            datos.ejecutarLectura(); 
 
             while (datos.Lector.Read())
             {
