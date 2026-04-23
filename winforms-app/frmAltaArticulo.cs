@@ -14,6 +14,7 @@ namespace winforms_app
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -64,7 +65,19 @@ namespace winforms_app
 
         private void btnAltaArticulo_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            articulo = new Articulo();
 
+            articulo.Codigo = txtCodigoArticulo.Text;
+            articulo.Nombre = txtNombre.Text;
+            articulo.Marca = (Marca)cboxMarca.SelectedItem;
+            articulo.Categoria = (Categoria)cboxCategoria.SelectedItem;
+            articulo.Descripcion = rtxtDescripcion.Text;
+            articulo.Precio = nPrecio.Value;
+
+            negocio.agregar(articulo);
+
+            Close();
         }
     }
 }
