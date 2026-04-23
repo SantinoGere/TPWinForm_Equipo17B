@@ -66,11 +66,22 @@ namespace winforms_app
         private void btnAltaArticulo_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
+            MarcaNegocio negocioMarca = new MarcaNegocio();
             articulo = new Articulo();
 
             articulo.Codigo = txtCodigoArticulo.Text;
             articulo.Nombre = txtNombre.Text;
-            articulo.Marca = (Marca)cboxMarca.SelectedItem;
+            if(cboxMarca.SelectedItem != null)
+            {
+                articulo.Marca = (Marca)cboxMarca.SelectedItem;
+            }
+            else
+            {
+                string descripcionMarca = cboxMarca.Text;
+                articulo.Marca = new Marca();
+                articulo.Marca.Descripcion = descripcionMarca;
+                articulo.Marca.Id = negocioMarca.agregar(descripcionMarca);
+            }
             articulo.Categoria = (Categoria)cboxCategoria.SelectedItem;
             articulo.Descripcion = rtxtDescripcion.Text;
             articulo.Precio = nPrecio.Value;

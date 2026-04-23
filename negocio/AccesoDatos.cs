@@ -63,6 +63,25 @@ namespace negocio
             }
         }
 
+        public int ejecutarDevolverId()
+        {
+            int id = 0;
+            try
+            {
+                comando.Connection = conexion;
+                conexion.Open();
+                id = (int)comando.ExecuteScalar();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return id;
+        }
+
         public void setearParametros(string nombre, object valor)
         {
             comando.Parameters.AddWithValue(nombre, valor);

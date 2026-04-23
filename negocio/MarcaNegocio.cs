@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,32 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public int agregar(string marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int id = 0;
+
+            try
+            {
+                datos.setearConsulta("insert into MARCAS (descripcion) Output INSERTED.Id values(@marca)");
+                datos.setearParametros("@marca", marca);
+                id = datos.ejecutarDevolverId();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+                return id;
         }
 
     }
