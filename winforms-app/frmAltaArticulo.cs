@@ -67,6 +67,7 @@ namespace winforms_app
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             MarcaNegocio negocioMarca = new MarcaNegocio();
+            CategoriaNegocio negocioCategoria = new CategoriaNegocio();
             articulo = new Articulo();
 
             articulo.Codigo = txtCodigoArticulo.Text;
@@ -82,7 +83,17 @@ namespace winforms_app
                 articulo.Marca.Descripcion = descripcionMarca;
                 articulo.Marca.Id = negocioMarca.agregarDevolverId(descripcionMarca);
             }
-            articulo.Categoria = (Categoria)cboxCategoria.SelectedItem;
+            if(cboxCategoria.SelectedItem != null)
+            {
+                articulo.Categoria = (Categoria)cboxCategoria.SelectedItem;
+            }
+            else
+            {
+                string descripcionCategoria = cboxCategoria.Text;
+                articulo.Categoria = new Categoria();
+                articulo.Categoria.Descripcion = descripcionCategoria;
+                articulo.Categoria.Id = negocioCategoria.agregarDevolverId(descripcionCategoria);
+            }
             articulo.Descripcion = rtxtDescripcion.Text;
             articulo.Precio = nPrecio.Value;
 

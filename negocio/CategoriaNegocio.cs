@@ -39,5 +39,29 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public int agregarDevolverId(string categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int id = 0;
+
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS(descripcion) Output INSERTED.Id values(@marca)");
+                datos.setearParametros("@marca", categoria);
+                id = datos.ejecutarDevolverId();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return id;
+        }
     }
 } 

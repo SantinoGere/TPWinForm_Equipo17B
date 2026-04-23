@@ -63,6 +63,7 @@ namespace negocio
             }
         }
 
+        // devuelve el id de lo que se cargue en la BD
         public int ejecutarDevolverId()
         {
             int id = 0;
