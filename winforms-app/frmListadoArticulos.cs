@@ -28,27 +28,29 @@ namespace winforms_app
         }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-    if (dgvArticulos.CurrentRow != null)
-    {
-        Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-
-        lblNombre.Text = seleccionado.Nombre;
-        lblDescripcion.Text = seleccionado.Descripcion;
-
-        if (seleccionado.Imagenes != null && seleccionado.Imagenes.Count > 0)
-        {
-            try
+            if (dgvArticulos.CurrentRow != null)
             {
-                pbArticulo.Load(seleccionado.Imagenes[0].UrlImagen);
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                lblNombre.Text = seleccionado.Nombre;
+                lblDescripcion.Text = seleccionado.Descripcion;
+
+                if (seleccionado.Imagenes != null && seleccionado.Imagenes.Count > 0)
+                {
+                    try
+                    {
+                        pbArticulo.Load(seleccionado.Imagenes[0].UrlImagen);
+                    }
+                    catch
+                    {
+                        pbArticulo.Load("https://via.placeholder.com/150");
+                    }
+                }
+                else
+                {
+                    pbArticulo.Load("https://via.placeholder.com/150");
+                }
             }
-            catch
-            {
-                pbArticulo.Load("https://via.placeholder.com/150");
-            }
-        }
-        else
-        {
-            pbArticulo.Load("https://via.placeholder.com/150");
         }
     }
 }
