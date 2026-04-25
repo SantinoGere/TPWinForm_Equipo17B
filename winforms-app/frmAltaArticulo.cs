@@ -54,6 +54,7 @@ namespace winforms_app
                     //txtCategoria = articulo.Categoria.ToString();
                     cboxCategoria.SelectedValue = articulo.Categoria.Id;
                     //txtPrecio.Text = articulo.Precio.ToString();
+                    nPrecio.Value = articulo.Precio;
 
                     txtUrlImagen.Text = articulo.Imagenes.ToString();
                     if (articulo.Imagenes.ToString() != "")

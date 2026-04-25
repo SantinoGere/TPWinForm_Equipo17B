@@ -147,7 +147,7 @@
             // 
             // nPrecio
             // 
-            this.nPrecio.DecimalPlaces = 2;
+            this.nPrecio.DecimalPlaces = 3;
             this.nPrecio.Location = new System.Drawing.Point(114, 295);
             this.nPrecio.Maximum = new decimal(new int[] {
             1000000000,
