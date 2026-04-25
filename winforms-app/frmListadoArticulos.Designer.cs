@@ -124,6 +124,7 @@ namespace winforms_app
             this.btnLimpiarFiltro.TabIndex = 11;
             this.btnLimpiarFiltro.Text = "Limpiar";
             this.btnLimpiarFiltro.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
             // 
             // lblMarcaFiltro
             // 
@@ -183,9 +184,15 @@ namespace winforms_app
             // 
             this.nPrecioFiltro.DecimalPlaces = 2;
             this.nPrecioFiltro.Location = new System.Drawing.Point(715, 135);
+            this.nPrecioFiltro.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nPrecioFiltro.Name = "nPrecioFiltro";
             this.nPrecioFiltro.Size = new System.Drawing.Size(100, 20);
             this.nPrecioFiltro.TabIndex = 18;
+            this.nPrecioFiltro.ThousandsSeparator = true;
             // 
             // btnFiltrar
             // 
@@ -195,6 +202,7 @@ namespace winforms_app
             this.btnFiltrar.TabIndex = 19;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // frmListadoArticulos
             // 

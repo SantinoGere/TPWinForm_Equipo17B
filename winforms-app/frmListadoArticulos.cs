@@ -147,5 +147,43 @@ namespace winforms_app
             modificar.ShowDialog();
             cargar();
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            string marca, categoria, criterio;
+            decimal precio;
+
+            try
+            {
+                marca = cboxMarcaFiltro.Text; categoria = cboxCategoriaFiltro.Text;
+                criterio = cboxPrecioFiltro.Text;
+                precio = nPrecioFiltro.Value;
+
+                listaFiltrada = negocio.filtrar(marca, categoria, criterio, precio);
+                dgvArticulos.DataSource = listaFiltrada;
+                dgvArticulos.Columns["Id"].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
+        {
+            cargar();
+            cboxMarcaFiltro.SelectedIndex = -1;
+            cboxMarcaFiltro.Text = "";
+            cboxCategoriaFiltro.SelectedIndex = -1;
+            cboxCategoriaFiltro.Text = "";
+            cboxPrecioFiltro.SelectedIndex = -1;
+            cboxPrecioFiltro.Text = "";
+            nPrecioFiltro.Value = 0;
+
+        }
     }
 }
