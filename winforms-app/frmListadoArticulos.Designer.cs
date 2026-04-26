@@ -224,6 +224,28 @@ namespace winforms_app
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // btnEliminarMarca
+            // 
+            this.btnEliminarMarca = new System.Windows.Forms.Button();
+            this.btnEliminarMarca.Location = new System.Drawing.Point(297, 103);
+            this.btnEliminarMarca.Name = "btnEliminarMarca";
+            this.btnEliminarMarca.Size = new System.Drawing.Size(100, 23);
+            this.btnEliminarMarca.TabIndex = 20;
+            this.btnEliminarMarca.Text = "Eliminar Marca";
+            this.btnEliminarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
+            // 
+            // btnEliminarCategoria
+            // 
+            this.btnEliminarCategoria = new System.Windows.Forms.Button();
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(297, 135);
+            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(100, 23);
+            this.btnEliminarCategoria.TabIndex = 21;
+            this.btnEliminarCategoria.Text = "Eliminar Categoria";
+            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
+            // 
             // frmListadoArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +268,8 @@ namespace winforms_app
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
+            this.Controls.Add(this.btnEliminarMarca);
+            this.Controls.Add(this.btnEliminarCategoria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(939, 434);
@@ -279,5 +303,7 @@ namespace winforms_app
         private System.Windows.Forms.ComboBox cboxPrecioFiltro;
         private System.Windows.Forms.NumericUpDown nPrecioFiltro;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnEliminarMarca;
+        private System.Windows.Forms.Button btnEliminarCategoria;
     }
 }
