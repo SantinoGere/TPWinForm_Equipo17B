@@ -266,5 +266,37 @@ namespace winforms_app
            MessageBox.Show(ex.Message);
           }
        }
+
+       private void btnEliminarCategoria_Click(object sender, EventArgs e)
+      {
+        CategoriaNegocio negocio = new CategoriaNegocio();
+
+        try
+        {
+        if (cboxCategoria.SelectedItem != null)
+        {
+            Categoria seleccionada = (Categoria)cboxCategoria.SelectedItem;
+
+            var respuesta = MessageBox.Show(
+                "¿Seguro querés eliminar esta categoría?",
+                "Eliminar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                negocio.eliminar(seleccionada.Id);
+                MessageBox.Show("Categoría eliminada");
+
+                cboxCategoria.DataSource = new CategoriaNegocio().listar();
+                cboxCategoria.SelectedIndex = -1;
+             }
+         }
+      }
+          catch (Exception ex)
+         {
+           MessageBox.Show(ex.Message);
+         }
+      }
     }
 }
