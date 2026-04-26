@@ -15,6 +15,7 @@ namespace winforms_app
     public partial class frmAltaArticulo : Form
     {
         private Articulo articulo = null;
+        List<string> listaUrls = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace winforms_app
                     cboxCategoria.SelectedValue = articulo.Categoria.Id;
                     //txtPrecio.Text = articulo.Precio.ToString();
                     nPrecio.Value = articulo.Precio;
+                    listaUrls = new List<string>();
 
                     //txtUrlImagen.Text = articulo.Imagenes.ToString();
                     if (articulo.Imagenes.Count > 0)
@@ -94,6 +96,11 @@ namespace winforms_app
                 string nuevaUrl = txtUrlImagen.Text;
                 lwUrlImagen.Items.Add(nuevaUrl);
                 txtUrlImagen.Text = null;
+                if(articulo != null)
+                {
+                    listaUrls.Add(nuevaUrl);
+
+                }
 
             }
             else
@@ -160,6 +167,15 @@ namespace winforms_app
                 
                 if (articulo.Id != 0) {
                     negocio.modificar(articulo);
+                    if(listaUrls.Count > 0)
+                    {
+                        ImagenNegocio imagenNegocio = new ImagenNegocio();
+                        foreach (string url in listaUrls)
+                        {
+                            imagenNegocio.agregar(articulo.Id, url);
+                        }
+                        
+                    }
                     MessageBox.Show("Modificado exitosamente");
                 }
                 else
