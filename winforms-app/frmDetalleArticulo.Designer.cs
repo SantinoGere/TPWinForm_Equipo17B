@@ -221,7 +221,7 @@
             this.MaximumSize = new System.Drawing.Size(487, 502);
             this.MinimumSize = new System.Drawing.Size(487, 502);
             this.Name = "frmDetalleArticulo";
-            this.Text = "frmDetalleArticulo";
+            this.Text = "Detalle de Articulo";
             this.Load += new System.EventHandler(this.frmDetalleArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPrecio)).EndInit();

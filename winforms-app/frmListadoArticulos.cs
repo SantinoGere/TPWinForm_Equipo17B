@@ -209,10 +209,23 @@ namespace winforms_app
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             try
             {
-                frmDetalleArticulo detalle = new frmDetalleArticulo((Articulo)dgvArticulos.CurrentRow.DataBoundItem);
-                detalle.ShowDialog();
+                foreach(var item in Application.OpenForms)
+                {
+                    if(item.GetType() == typeof(frmDetalleArticulo))
+                    {
+                        frmDetalleArticulo aux = (frmDetalleArticulo)item;
+                        if(aux.id == articulo.Id)
+                        {
+                            MessageBox.Show("Ya hay una ventana para detalle de ese articulo");
+                            return;
+                        }
+                    }
+                }
+                frmDetalleArticulo detalle = new frmDetalleArticulo(articulo);
+                detalle.Show();
 
             }
             catch (Exception)

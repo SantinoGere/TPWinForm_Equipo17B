@@ -16,8 +16,13 @@ namespace winforms_app
     {
         private Articulo articulo = null;
         private ImagenNegocio imagenNegocio = new ImagenNegocio();
+        public int id
+        {
+            get { return articulo.Id; }
+        }
         int cantidadImagenes = 0;
         int imagenActual = 0;
+        
         public frmDetalleArticulo(Articulo articulo)
         {
             InitializeComponent();
