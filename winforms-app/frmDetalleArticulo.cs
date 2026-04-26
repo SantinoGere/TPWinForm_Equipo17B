@@ -66,8 +66,6 @@ namespace winforms_app
                     {
                         pboxImagenArticulo.Load(articulo.Imagenes[imagenActual].UrlImagen);
                         actualizarContadorImagenes();
-
-
                     }
                     catch
                     {

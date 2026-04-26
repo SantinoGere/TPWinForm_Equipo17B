@@ -157,9 +157,19 @@ namespace winforms_app
                 articulo.Descripcion = rtxtDescripcion.Text;
                 articulo.Precio = nPrecio.Value;
 
-                
                 if (articulo.Id != 0) {
                     negocio.modificar(articulo);
+                    // Agregar nuevas imágenes si hay URLs nuevas en el ListView
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    var urlsExistentes = articulo.Imagenes.Select(img => img.UrlImagen).ToList();
+                    foreach (ListViewItem item in lwUrlImagen.Items)
+                    {
+                        string url = item.Text;
+                        if (!urlsExistentes.Contains(url))
+                        {
+                            imagenNegocio.agregar(articulo.Id, url);
+                        }
+                    }
                     MessageBox.Show("Modificado exitosamente");
                 }
                 else
