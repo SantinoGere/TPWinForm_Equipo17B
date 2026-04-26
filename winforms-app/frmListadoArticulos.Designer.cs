@@ -19,6 +19,7 @@ namespace winforms_app
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoArticulos));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@ namespace winforms_app
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(560, 263);
+            this.dgvArticulos.Size = new System.Drawing.Size(643, 304);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
@@ -58,7 +59,7 @@ namespace winforms_app
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregar.Location = new System.Drawing.Point(13, 319);
+            this.btnAgregar.Location = new System.Drawing.Point(13, 360);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
@@ -69,7 +70,7 @@ namespace winforms_app
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(94, 319);
+            this.btnModificar.Location = new System.Drawing.Point(94, 360);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 5;
@@ -80,7 +81,7 @@ namespace winforms_app
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(175, 319);
+            this.btnEliminar.Location = new System.Drawing.Point(175, 360);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
@@ -91,7 +92,7 @@ namespace winforms_app
             // btnVerDetalle
             // 
             this.btnVerDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnVerDetalle.Location = new System.Drawing.Point(256, 319);
+            this.btnVerDetalle.Location = new System.Drawing.Point(256, 360);
             this.btnVerDetalle.Name = "btnVerDetalle";
             this.btnVerDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnVerDetalle.TabIndex = 7;
@@ -120,7 +121,7 @@ namespace winforms_app
             // 
             this.lblFiltroAvanzado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFiltroAvanzado.AutoSize = true;
-            this.lblFiltroAvanzado.Location = new System.Drawing.Point(601, 38);
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(684, 38);
             this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
             this.lblFiltroAvanzado.Size = new System.Drawing.Size(80, 13);
             this.lblFiltroAvanzado.TabIndex = 10;
@@ -129,7 +130,7 @@ namespace winforms_app
             // btnLimpiarFiltro
             // 
             this.btnLimpiarFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiarFiltro.Location = new System.Drawing.Point(753, 33);
+            this.btnLimpiarFiltro.Location = new System.Drawing.Point(836, 33);
             this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
             this.btnLimpiarFiltro.Size = new System.Drawing.Size(62, 23);
             this.btnLimpiarFiltro.TabIndex = 11;
@@ -141,7 +142,7 @@ namespace winforms_app
             // 
             this.lblMarcaFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMarcaFiltro.AutoSize = true;
-            this.lblMarcaFiltro.Location = new System.Drawing.Point(613, 71);
+            this.lblMarcaFiltro.Location = new System.Drawing.Point(696, 71);
             this.lblMarcaFiltro.Name = "lblMarcaFiltro";
             this.lblMarcaFiltro.Size = new System.Drawing.Size(37, 13);
             this.lblMarcaFiltro.TabIndex = 12;
@@ -152,7 +153,7 @@ namespace winforms_app
             this.cboxMarcaFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxMarcaFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMarcaFiltro.FormattingEnabled = true;
-            this.cboxMarcaFiltro.Location = new System.Drawing.Point(668, 68);
+            this.cboxMarcaFiltro.Location = new System.Drawing.Point(751, 68);
             this.cboxMarcaFiltro.Name = "cboxMarcaFiltro";
             this.cboxMarcaFiltro.Size = new System.Drawing.Size(147, 21);
             this.cboxMarcaFiltro.TabIndex = 13;
@@ -161,7 +162,7 @@ namespace winforms_app
             // 
             this.lblCategoriaFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCategoriaFiltro.AutoSize = true;
-            this.lblCategoriaFiltro.Location = new System.Drawing.Point(601, 101);
+            this.lblCategoriaFiltro.Location = new System.Drawing.Point(684, 101);
             this.lblCategoriaFiltro.Name = "lblCategoriaFiltro";
             this.lblCategoriaFiltro.Size = new System.Drawing.Size(52, 13);
             this.lblCategoriaFiltro.TabIndex = 14;
@@ -172,7 +173,7 @@ namespace winforms_app
             this.cboxCategoriaFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxCategoriaFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxCategoriaFiltro.FormattingEnabled = true;
-            this.cboxCategoriaFiltro.Location = new System.Drawing.Point(668, 98);
+            this.cboxCategoriaFiltro.Location = new System.Drawing.Point(751, 98);
             this.cboxCategoriaFiltro.Name = "cboxCategoriaFiltro";
             this.cboxCategoriaFiltro.Size = new System.Drawing.Size(147, 21);
             this.cboxCategoriaFiltro.TabIndex = 15;
@@ -181,7 +182,7 @@ namespace winforms_app
             // 
             this.lblPrecioFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrecioFiltro.AutoSize = true;
-            this.lblPrecioFiltro.Location = new System.Drawing.Point(613, 137);
+            this.lblPrecioFiltro.Location = new System.Drawing.Point(696, 137);
             this.lblPrecioFiltro.Name = "lblPrecioFiltro";
             this.lblPrecioFiltro.Size = new System.Drawing.Size(37, 13);
             this.lblPrecioFiltro.TabIndex = 16;
@@ -192,7 +193,7 @@ namespace winforms_app
             this.cboxPrecioFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxPrecioFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxPrecioFiltro.FormattingEnabled = true;
-            this.cboxPrecioFiltro.Location = new System.Drawing.Point(668, 134);
+            this.cboxPrecioFiltro.Location = new System.Drawing.Point(751, 134);
             this.cboxPrecioFiltro.Name = "cboxPrecioFiltro";
             this.cboxPrecioFiltro.Size = new System.Drawing.Size(41, 21);
             this.cboxPrecioFiltro.TabIndex = 17;
@@ -201,7 +202,7 @@ namespace winforms_app
             // 
             this.nPrecioFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nPrecioFiltro.DecimalPlaces = 2;
-            this.nPrecioFiltro.Location = new System.Drawing.Point(715, 135);
+            this.nPrecioFiltro.Location = new System.Drawing.Point(798, 135);
             this.nPrecioFiltro.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -215,7 +216,7 @@ namespace winforms_app
             // btnFiltrar
             // 
             this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltrar.Location = new System.Drawing.Point(685, 33);
+            this.btnFiltrar.Location = new System.Drawing.Point(768, 33);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(62, 23);
             this.btnFiltrar.TabIndex = 19;
@@ -227,7 +228,7 @@ namespace winforms_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 354);
+            this.ClientSize = new System.Drawing.Size(923, 395);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.nPrecioFiltro);
             this.Controls.Add(this.cboxPrecioFiltro);
@@ -245,7 +246,12 @@ namespace winforms_app
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(939, 434);
+            this.MinimumSize = new System.Drawing.Size(939, 434);
             this.Name = "frmListadoArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Artículos";
             this.Load += new System.EventHandler(this.frmListadoArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();

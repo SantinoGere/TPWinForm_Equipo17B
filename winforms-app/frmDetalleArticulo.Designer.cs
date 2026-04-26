@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleArticulo));
             this.pboxImagenArticulo = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
@@ -218,9 +219,13 @@
             this.Controls.Add(this.rtxtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.pboxImagenArticulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(487, 502);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(487, 502);
             this.Name = "frmDetalleArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de Articulo";
             this.Load += new System.EventHandler(this.frmDetalleArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenArticulo)).EndInit();

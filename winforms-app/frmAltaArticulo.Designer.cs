@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaArticulo));
             this.lblCodigoArticulo = new System.Windows.Forms.Label();
             this.txtCodigoArticulo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -266,9 +267,13 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtCodigoArticulo);
             this.Controls.Add(this.lblCodigoArticulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(415, 522);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(415, 522);
             this.Name = "frmAltaArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nPrecio)).EndInit();
