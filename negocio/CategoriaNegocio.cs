@@ -63,5 +63,33 @@ namespace negocio
             }
             return id;
         }
+
+        public void eliminar(int id)
+        {
+           AccesoDatos datos = new AccesoDatos();
+
+           try
+           {
+              datos.setearConsulta("SELECT COUNT(*) FROM ARTICULOS WHERE IdCategoria = @id");
+              datos.setearParametros("@id", id);
+              int cantidad = datos.ejecutarEscalar();
+
+           if (cantidad > 0)
+               throw new Exception("No se puede eliminar la categoría porque está asociada a artículos.");
+
+                datos.setearConsulta("DELETE FROM CATEGORIAS WHERE Id = @id");
+                datos.limpiarParametros();
+                datos.setearParametros("@id", id);
+                datos.ejecutarAccion();
+           }
+           catch (Exception)
+           {
+                throw;
+           }
+           finally
+           {
+               datos.cerrarConexion();
+           }
+        }
     }
 } 
