@@ -234,5 +234,37 @@ namespace winforms_app
             }
 
         }
+
+        private void btnEliminarMarca_Click(object sender, EventArgs e)
+        {
+          MarcaNegocio negocio = new MarcaNegocio();
+
+          try
+        {
+          if (cboxMarca.SelectedItem != null)
+        {
+            Marca seleccionada = (Marca)cboxMarca.SelectedItem;
+
+            var respuesta = MessageBox.Show(
+                "¿Seguro querés eliminar esta marca?",
+                "Eliminar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                negocio.eliminar(seleccionada.Id);
+                MessageBox.Show("Marca eliminada");
+
+                cboxMarca.DataSource = new MarcaNegocio().listar();
+                cboxMarca.SelectedIndex = -1;
+            }
+          }
+        }
+           catch (Exception ex)
+          {
+           MessageBox.Show(ex.Message);
+          }
+       }
     }
 }
