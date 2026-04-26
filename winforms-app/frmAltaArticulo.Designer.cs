@@ -240,28 +240,6 @@
             this.btnBorrarSeleccion.Text = "Borrar Seleccion";
             this.btnBorrarSeleccion.UseVisualStyleBackColor = true;
             this.btnBorrarSeleccion.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEliminarMarca
-            // 
-            this.btnEliminarMarca = new System.Windows.Forms.Button();
-            this.btnEliminarMarca.Location = new System.Drawing.Point(297, 103);
-            this.btnEliminarMarca.Name = "btnEliminarMarca";
-            this.btnEliminarMarca.Size = new System.Drawing.Size(100, 23);
-            this.btnEliminarMarca.TabIndex = 20;
-            this.btnEliminarMarca.Text = "Eliminar Marca";
-            this.btnEliminarMarca.UseVisualStyleBackColor = true;
-            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
-            // 
-            // btnEliminarCategoria
-            // 
-            this.btnEliminarCategoria = new System.Windows.Forms.Button();
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(297, 135);
-            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
-            this.btnEliminarCategoria.Size = new System.Drawing.Size(100, 23);
-            this.btnEliminarCategoria.TabIndex = 21;
-            this.btnEliminarCategoria.Text = "Eliminar Categoria";
-            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
-            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             //
             // frmAltaArticulo
             // 
@@ -289,8 +267,6 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtCodigoArticulo);
             this.Controls.Add(this.lblCodigoArticulo);
-            this.Controls.Add(this.btnEliminarMarca);
-            this.Controls.Add(this.btnEliminarCategoria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(415, 522);
@@ -329,7 +305,5 @@
         private System.Windows.Forms.Label lblFaltanteCodigoArticulo;
         private System.Windows.Forms.Label lblNombreFaltante;
         private System.Windows.Forms.Button btnBorrarSeleccion;
-        private System.Windows.Forms.Button btnEliminarMarca;
-        private System.Windows.Forms.Button btnEliminarCategoria;
     }
 }
