@@ -86,9 +86,17 @@ namespace winforms_app
         {
             if (cantidadImagenes > 1 && cantidadImagenes > imagenActual+1)
             {
-                imagenActual++;
-                pboxImagenArticulo.Load(articulo.Imagenes[imagenActual].UrlImagen);
-                actualizarContadorImagenes();
+                try
+                {
+                    imagenActual++;
+                    pboxImagenArticulo.Load(articulo.Imagenes[imagenActual].UrlImagen);
+                    actualizarContadorImagenes();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al pasar de foto");
+                }
 
 
             }
@@ -99,9 +107,18 @@ namespace winforms_app
         {
             if (imagenActual > 0)
             {
-                imagenActual--;
-                pboxImagenArticulo.Load(articulo.Imagenes[imagenActual].UrlImagen);
-                actualizarContadorImagenes();
+                try
+                {
+                    imagenActual--;
+                    pboxImagenArticulo.Load(articulo.Imagenes[imagenActual].UrlImagen);
+                    actualizarContadorImagenes();
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error al pasar de foto");
+                }
 
             }
 
