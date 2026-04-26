@@ -235,68 +235,68 @@ namespace winforms_app
 
         }
 
-        private void btnEliminarMarca_Click(object sender, EventArgs e)
-        {
-          MarcaNegocio negocio = new MarcaNegocio();
+      //  private void btnEliminarMarca_Click(object sender, EventArgs e)
+      //  {
+      //    MarcaNegocio negocio = new MarcaNegocio();
 
-          try
-        {
-          if (cboxMarca.SelectedItem != null)
-        {
-            Marca seleccionada = (Marca)cboxMarca.SelectedItem;
+      //    try
+      //  {
+      //    if (cboxMarca.SelectedItem != null)
+      //  {
+      //      Marca seleccionada = (Marca)cboxMarca.SelectedItem;
 
-            var respuesta = MessageBox.Show(
-                "¿Seguro querés eliminar esta marca?",
-                "Eliminar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
+      //      var respuesta = MessageBox.Show(
+      //          "¿Seguro querés eliminar esta marca?",
+      //          "Eliminar",
+      //          MessageBoxButtons.YesNo,
+      //          MessageBoxIcon.Warning);
 
-            if (respuesta == DialogResult.Yes)
-            {
-                negocio.eliminar(seleccionada.Id);
-                MessageBox.Show("Marca eliminada");
+      //      if (respuesta == DialogResult.Yes)
+      //      {
+      //          negocio.eliminar(seleccionada.Id);
+      //          MessageBox.Show("Marca eliminada");
 
-                cboxMarca.DataSource = new MarcaNegocio().listar();
-                cboxMarca.SelectedIndex = -1;
-            }
-          }
-        }
-           catch (Exception ex)
-          {
-           MessageBox.Show(ex.Message);
-          }
-       }
+      //          cboxMarca.DataSource = new MarcaNegocio().listar();
+      //          cboxMarca.SelectedIndex = -1;
+      //      }
+      //    }
+      //  }
+      //     catch (Exception ex)
+      //    {
+      //     MessageBox.Show(ex.Message);
+      //    }
+      // }
 
-       private void btnEliminarCategoria_Click(object sender, EventArgs e)
-      {
-        CategoriaNegocio negocio = new CategoriaNegocio();
+      // private void btnEliminarCategoria_Click(object sender, EventArgs e)
+      //{
+      //  CategoriaNegocio negocio = new CategoriaNegocio();
 
-        try
-        {
-        if (cboxCategoria.SelectedItem != null)
-        {
-            Categoria seleccionada = (Categoria)cboxCategoria.SelectedItem;
+      //  try
+      //  {
+      //  if (cboxCategoria.SelectedItem != null)
+      //  {
+      //      Categoria seleccionada = (Categoria)cboxCategoria.SelectedItem;
 
-            var respuesta = MessageBox.Show(
-                "¿Seguro querés eliminar esta categoría?",
-                "Eliminar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
+      //      var respuesta = MessageBox.Show(
+      //          "¿Seguro querés eliminar esta categoría?",
+      //          "Eliminar",
+      //          MessageBoxButtons.YesNo,
+      //          MessageBoxIcon.Warning);
 
-            if (respuesta == DialogResult.Yes)
-            {
-                negocio.eliminar(seleccionada.Id);
-                MessageBox.Show("Categoría eliminada");
+      //      if (respuesta == DialogResult.Yes)
+      //      {
+      //          negocio.eliminar(seleccionada.Id);
+      //          MessageBox.Show("Categoría eliminada");
 
-                cboxCategoria.DataSource = new CategoriaNegocio().listar();
-                cboxCategoria.SelectedIndex = -1;
-             }
-         }
-      }
-          catch (Exception ex)
-         {
-           MessageBox.Show(ex.Message);
-         }
-      }
+      //          cboxCategoria.DataSource = new CategoriaNegocio().listar();
+      //          cboxCategoria.SelectedIndex = -1;
+      //       }
+      //   }
+      //}
+      //    catch (Exception ex)
+      //   {
+      //     MessageBox.Show(ex.Message);
+      //   }
+      //}
     }
 }
